@@ -1,10 +1,11 @@
+from src.data.interfaces import PetRepositoryInterface
 from src.domain.models import Pets
 from src.infra.entities import Pets as PetsModel
 from src.infra.config import DBConnectionHandler
 from typing import List
 
 
-class PetRepository:
+class PetRepository(PetRepositoryInterface):
     @classmethod
     def insert_pet(cls, name: str, specie: str, age: int, user_id: int) -> Pets:
 

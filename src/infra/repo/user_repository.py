@@ -1,10 +1,11 @@
+from src.data.interfaces import UserRepositoryInterface
 from src.infra.config import DBConnectionHandler
 from src.infra.entities import Users as UsersModel
 from src.domain.models import Users
 from typing import List
 
 
-class UserRepository:
+class UserRepository(UserRepositoryInterface):
     @classmethod
     def insert_user(cls, name: str, password: str) -> Users:
 
