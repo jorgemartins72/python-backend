@@ -23,3 +23,14 @@ class Pets(Base):
 
     def __repr__(self) -> str:
         return f"Pet [name={self.name}, spercie={self.specie}, user_id={self.user}]"
+
+    def __eq__(self, other) -> bool:
+        if (
+            self.id == other.id
+            and self.name == other.name
+            and self.specie == other.specie
+            and self.age == other.specie
+            and self.user_id == other.user_id
+        ):
+            return True
+        return False
